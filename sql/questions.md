@@ -35,3 +35,16 @@ Return the latest purchase made by each customer.
 ## Question 4
 
 Rank customers by total spending.
+
+---
+## Question 5
+
+Calculate a running total of sales per customer ordered by sale_date.
+
+Bonus:
+
+Explain the difference between:
+
+- ROW_NUMBER()
+- RANK()
+- DENSE_RANK()
