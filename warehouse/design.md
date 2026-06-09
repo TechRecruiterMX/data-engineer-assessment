@@ -33,6 +33,14 @@ The business wants analytics for:
 
 7. New orders arrive every 15 minutes.
 
+8. Describe how you would monitor data quality in your warehouse.
+
+Examples:
+- Duplicate records
+- Missing data
+- Unexpected values
+- Failed loads
+
 How would you load this data into your warehouse without reprocessing all historical records?
 
 Please answer below.
