@@ -17,3 +17,10 @@ Tasks
 
 4. Explain how you would process this if there were 100 million rows.
 """
+Bonus Question
+
+How would you modify your solution if
+the dataset contained 100 million records?
+
+Provide your answer below.
+"""
