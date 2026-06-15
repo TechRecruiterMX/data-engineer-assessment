@@ -1,10 +1,9 @@
 # Data Engineer Assessment
 
 This assessment evaluates:
-
 - SQL
 - Window Functions
-- Python
+- Python Programming
 - Data Engineering fundamentals
 
 Expected completion time: 30-40 minutes.
