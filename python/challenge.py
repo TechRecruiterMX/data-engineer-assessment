@@ -1,26 +1,78 @@
-sales = [
-    {"customer_id": 1, "amount": 100},
-    {"customer_id": 2, "amount": 200},
-    {"customer_id": 1, "amount": 150},
-    {"customer_id": 3, "amount": None},
-    {"customer_id": 2, "amount": 200},
-]
+# Python Programming Challenge
 
 """
-Tasks
+You are building a data processing utility.
 
-1. Remove records with null amounts.
+Complete the functions below.
 
-2. Calculate total spend per customer.
-
-3. Return the highest spending customer.
-
-4. Explain how you would process this if there were 100 million rows.
+Focus on:
+- Clean code
+- Correct logic
+- Edge cases
 """
-Bonus Question
 
-How would you modify your solution if
-the dataset contained 100 million records?
 
-Provide your answer below.
-"""
+def remove_duplicates(items):
+    """
+    Given a list of values, return a new list
+    with duplicates removed while preserving order.
+
+    Example:
+
+    Input:
+    [1,2,2,3,1,4]
+
+    Output:
+    [1,2,3,4]
+    """
+
+    pass
+
+
+
+def find_missing_numbers(numbers):
+    """
+    Given a list of integers from 1 to N
+    with some missing values, return the missing numbers.
+
+    Example:
+
+    Input:
+    [1,2,4,6]
+
+    Output:
+    [3,5]
+
+    """
+
+    pass
+
+
+
+def flatten_list(nested_list):
+    """
+    Convert a nested list into a single list.
+
+    Example:
+
+    Input:
+    [[1,2],[3,4],[5]]
+
+    Output:
+    [1,2,3,4,5]
+
+    """
+
+    pass
+
+
+
+def process_large_file():
+    """
+    Explain how you would process a 20GB CSV file
+    without loading everything into memory.
+
+    Write your answer as a comment.
+    """
+
+    pass
