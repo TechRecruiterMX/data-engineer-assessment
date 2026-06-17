@@ -1,39 +1,74 @@
-# Python Programming Challenge
-#
-# Focus:
-# - Functions
-# - Data structures
-# - Error handling
-# - Clean code
-# - Problem solving
+from typing import Any, Iterable, Iterator
+import json
+from datetime import datetime, timedelta
 
 
-def clean_records(records):
+def parse_ndjson(
+    lines: Iterable[str],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """
-    Given a list of dictionaries representing events,
-    return only valid records.
+    Parse newline-delimited JSON.
 
-    A valid record:
-    - Has an id
-    - Has a timestamp
-    - Has a value greater than 0
+    Invalid lines should be quarantined.
+
+    Return:
+    (
+        valid_records,
+        errors
+    )
+
+    Errors contain:
+
+    {
+      "line_number": int,
+      "line": str
+    }
+
+    Rules:
+
+    - Blank lines are ignored
+    - Invalid JSON is an error
+    - Valid JSON but not an object is an error
+    - Never crash
+    """
+
+    pass
 
 
-    Example:
 
-    Input:
-    [
-        {"id":1, "timestamp":"2025-01-01", "value":100},
-        {"id":2, "timestamp":None, "value":50},
-        {"id":3, "timestamp":"2025-01-02", "value":-5}
-    ]
+def clean_records(
+    records: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    """
+    Keep only valid records.
+
+    Valid record:
+
+    - has id
+    - has timestamp
+    - value is numeric
+    - value > 0
+
+    Do not mutate input.
+    """
+
+    pass
 
 
-    Output:
 
-    [
-        {"id":1, "timestamp":"2025-01-01", "value":100}
-    ]
+def deduplicate_records(
+    records: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    """
+    Remove duplicates by id.
+
+    Keep the newest timestamp.
+
+    Handles:
+
+    - retries
+    - late arriving events
+    - duplicate ingestion
 
     """
 
@@ -41,74 +76,50 @@ def clean_records(records):
 
 
 
-def transform_records(records):
+def sessionize(
+    records: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
     """
-    Transform valid records.
+    Assign sessions.
+
+    A new session starts when:
+
+    time gap > 30 minutes
+
+    Input:
+
+    {
+      "user_id":1,
+      "timestamp":"2025-01-01T10:00:00"
+    }
+
+
+    Output:
+
+    {
+      "user_id":1,
+      "session_id":1
+    }
+
+    """
+
+    pass
+
+
+
+def batched(
+    iterable: Iterable[Any],
+    size: int
+) -> Iterator[list[Any]]:
+    """
+    Yield fixed-size batches.
 
     Requirements:
 
-    1. Convert value into USD format
-    2. Add a processed timestamp field
-    3. Return a new list without modifying the original
-
-
-    Example:
-
-    Input:
-    {"id":1,"value":100}
-
-    Output:
-    {
-      "id":1,
-      "value_usd":100,
-      "processed":True
-    }
+    - lazy
+    - memory efficient
+    - no full copy
 
     """
 
     pass
-
-
-
-def count_events_by_type(events):
-    """
-    Count how many events exist per type.
-
-    Example:
-
-    Input:
-
-    [
-      {"type":"click"},
-      {"type":"click"},
-      {"type":"purchase"}
-    ]
-
-
-    Output:
-
-    {
-      "click":2,
-      "purchase":1
-    }
-
-    """
-
-    pass
-
-
-
-"""
-Discussion Question:
-
-Imagine this pipeline processes 50 million records daily.
-
-How would you improve your Python solution?
-
-Consider:
-
-- Memory usage
-- Performance
-- Parallel processing
-- Libraries/tools
-"""
